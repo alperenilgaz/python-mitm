@@ -9,7 +9,6 @@ def get_mac_address(ip):
     brodcast_packet=scapy.Ether(dst="ff:ff:ff:ff:ff:ff")
     combined_packet=brodcast_packet/arp_request
     answered_list=scapy.srp(combined_packet,timeout=1,verbose=False)[0]
-    print(answered_list[0][0])
     return answered_list[0][0].hwsrc
 
 def arp_poisoning(target_ip,poison_ip):

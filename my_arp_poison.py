@@ -1,8 +1,6 @@
 import scapy.all as scapy
-import  time
+import time
 import optparse
-
-
 
 def get_mac_address(ip):
     arp_request=scapy.ARP(pdst=ip)
@@ -36,7 +34,7 @@ def get_user_input():
 
     return user_input
 
-number=0
+packet=0
 
 user_ips=get_user_input()
 user_target_ip=user_ips.target_ip
